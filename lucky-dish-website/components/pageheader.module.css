@@ -1,0 +1,28 @@
+/* CSS Module for PageHeader */
+
+/* Styling for div */
+.div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for image */
+.img {
+    border-radius: 8px;
+    margin: 5px;
+}
+
+/* Styling for header */
+.header {
+    font-style: italic;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+/* Responsive styling using media queries for mobile-friendliness */
+@media only screen and (max-width: 600px) {
+    .img {
+        width: 60%;
+    }
+}

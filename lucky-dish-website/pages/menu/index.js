@@ -1,8 +1,8 @@
-import PageHeader from "../../components/pageheader.js";
+import PageHeader from "../../components/PageHeader.js";
 import MenuBar from "../../components/menubar.js";
 import SearchBar from "../../components/searchbar.js";
 import ScrollMenu from "../../components/scrollmenu.js";
-import NavBar from "../../components/navbar.js";
+import NavBar from "../../components/NavBar.js";
 
 const Menu = () => {
     return (

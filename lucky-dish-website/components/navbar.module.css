@@ -1,0 +1,22 @@
+/* CSS Module for NavBar */
+
+/* Styling for nav */
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+}
+
+/* Styling for div */
+.div {
+    background-color: rgb(122, 122, 122);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+/* Styling for link */
+.link {
+    color: #2A4E6C;
+}
