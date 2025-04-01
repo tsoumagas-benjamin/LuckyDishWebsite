@@ -1,0 +1,32 @@
+/* CSS Module for SearchBar */
+
+/* Styling for div */
+.div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Styling for input */
+.input {
+    margin: 10px;
+    padding: 5px;
+    font-size: medium;
+    font-weight: bold;
+    width: 25%;
+    border-color: #2A4E6C;
+    border-radius: 5px;
+    background-color: rgb(122, 122, 122);
+}
+
+/* Styling for input placeholder text */
+.input::placeholder {
+    color: #2A4E6C;
+}
+
+/* Responsive styling using media queries for mobile-friendliness */
+@media only screen and (max-width: 600px) {
+    .input {
+        width: 90%;
+    }
+}

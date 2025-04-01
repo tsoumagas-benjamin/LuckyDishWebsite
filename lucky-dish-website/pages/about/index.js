@@ -3,6 +3,7 @@ import NavBar from "../../components/NavBar.js";
 
 const About = () => {
     const contentStyle = {
+        margin: "20px 0px",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",

@@ -1,0 +1,20 @@
+/* CSS Module for MenuBar */
+
+/* Styling for container div */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Styling for button */
+.button {
+    background-color: rgb(122, 122, 122);
+    margin: 2px;
+    padding: 5px;
+    border: 0px;
+    border-radius: 4px;
+    color: #2A4E6C;
+}

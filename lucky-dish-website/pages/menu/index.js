@@ -1,20 +1,16 @@
 import PageHeader from "../../components/PageHeader.js";
-import MenuBar from "../../components/menubar.js";
-import SearchBar from "../../components/searchbar.js";
-import ScrollMenu from "../../components/scrollmenu.js";
+import MenuBar from "../../components/MenuBar.js";
+import SearchBar from "../../components/SearchBar.js";
+import ScrollMenu from "../../components/ScrollMenu.js";
 import NavBar from "../../components/NavBar.js";
 
 const Menu = () => {
     return (
         <>
         <PageHeader />
-        <div>
-            <div>
-                <MenuBar />
-                <SearchBar />
-            </div>
-            <ScrollMenu />
-        </div>
+        <MenuBar />
+        <SearchBar />
+        <ScrollMenu />
         <NavBar />
         </>
     )
