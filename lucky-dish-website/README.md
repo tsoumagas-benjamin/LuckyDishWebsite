@@ -34,6 +34,8 @@
 
 ## Testing Report
 
+### Base Layout Created 3/31/25
+
 ## As of April 2nd, 2025 (11:22AM)
 
 ### ✅ Working Features
@@ -54,6 +56,9 @@
 - Implement API calls for nutrition analysis and recipes
 - Use bold text for navigation and menu category buttons for better readability on small screens
 
+## As of April 2nd, 2025 (5:00PM) 
+
+- COMING SOON
 
 ## Contributors
 - **Zainab** - Frontend Development
@@ -61,5 +66,7 @@
 - **Ben** - Styling & UI/UX Design
 - **Navjot** - API Integration & Data Handling
 - **Kuldip** - Testing & Documentation
+
+
 
 
