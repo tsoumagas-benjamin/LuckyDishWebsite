@@ -1,40 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Lucky Dish Website 🍽️
 
-## Getting Started
+## Overview
+ Lucky Dish provides customers a seamless and visually pleasing experience in viewing the menu and information about the restaurant. Users should be able to search the menu items, filter by category (breakfast/lunch/dinner/dessert/etc.) and view menu item costs and nutritional value at a glance. As a health conscious restaurant, dishes should be labeled for common dietary restrictions such as vegan/vegetarian/nut-free. As well the website should facilitate easy ordering and ways to see the total at a glance.
 
-First, run the development server:
+## Features
+- Search & Filter Menu Items  
+- View Nutritional Information  
+- Place an Order and See Total Cost  
+- Dietary Labels for Vegan, Vegetarian, and Nut-Free Dishes  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## How to Run the Project
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/tsoumagas-benjamin/LuckyDishWebsite.git
+   ```
+2. Navigate to the project folder:
+   ```bash
+   cd LuckyDishWebsite/lucky-dish-website
+   ```
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+5. Open **http://localhost:3000** in your browser
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## API Used
+- [Edamam API](https://developer.edamam.com/) for nutrition analysis
+- [API Ninja](https://api-ninjas.com/) for additional recipe data
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Testing Report
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## As of April 2nd, 2025 (11:22AM)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+### ✅ Working Features
+- Sign-up and sign-in pages are displayed in the Login tab
+- "About Us" page includes history, mission statement, and contact info
+- Mobile compatibility works well
+- Tabs for Breakfast, Lunch, Dinner, Dessert, and Drinks are visible and neatly placed
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### ❌ Issues Found
+1. **Search Bar Not Displaying Results** - The search function does not return menu items
+2. **Menu Items Missing** - No menu items are displayed in any tab (Breakfast, Lunch, Dinner, Dessert, Drinks)
+3. **API Integration Missing** - Edamam API for nutrition data and API Ninja for recipes are not implemented
+4. **Order Form Layout Missing** - There is no form for submitting orders or displaying total order cost
 
-## Learn More
+### Suggested Fixes
+- Add a confirmation message when sign-up is successful
+- Display menu items in each category (Breakfast, Lunch, etc.)
+- Implement API calls for nutrition analysis and recipes
+- Use bold text for navigation and menu category buttons for better readability on small screens
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## Contributors
+- **Zainab** - Frontend Development
+- **Steven** - State Management & Component Logic
+- **Ben** - Styling & UI/UX Design
+- **Navjot** - API Integration & Data Handling
+- **Kuldip** - Testing & Documentation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
