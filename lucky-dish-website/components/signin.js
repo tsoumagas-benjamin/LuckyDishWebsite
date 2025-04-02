@@ -1,8 +1,14 @@
-import { useState } from "react";
-import styles from "./signin.module.css";
+import Head from "next/head";
+import SignInForm from "../components/signinform";
+import styles from "./signin.module.css"; // Import the CSS module
 
-const SignUp = () => {
-    return <div>Implement Me</div>;
+const SignIn = () => {
+    return (
+        <div>
+            <h2 className={styles.heading}>Sign In</h2>
+            <SignInForm />
+        </div>
+    );
 };
 
-export default SignUp;
+export default SignIn;

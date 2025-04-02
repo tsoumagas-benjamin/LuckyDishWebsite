@@ -2,14 +2,19 @@ import PageHeader from "../../components/pageheader.js";
 import SignUp from "../../components/signup.js";
 import SignIn from "../../components/signin.js";
 import NavBar from "../../components/navbar.js";
+import Head from "next/head";
 
 const Login = () => {
     return (
         <>
+            <Head>
+                <title>Login</title>
+                <meta name="description" content="Login to your account" />
+            </Head>
             <PageHeader />
-            <h3>Sign Up</h3>
+
             <SignUp />
-            <h3>Sign In</h3>
+
             <SignIn />
             <NavBar />
         </>
