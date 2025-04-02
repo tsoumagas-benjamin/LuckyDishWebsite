@@ -1,5 +1,6 @@
 import PageHeader from "../../components/pageheader.js";
 import NavBar from "../../components/navbar.js";
+import Head from "next/head";
 
 const About = () => {
     const contentStyle = {
@@ -12,6 +13,10 @@ const About = () => {
 
     return (
         <>
+            <Head>
+                <title>Lucky Dish</title>
+                <meta name="description" content="About Us" />
+            </Head>
             <PageHeader />
             <div style={contentStyle}>
                 <h3>Mission Statement:</h3>
