@@ -93,7 +93,7 @@ Lucky Dish provides customers a seamless and visually pleasing experience in vie
 
 ## Any Further Changes Pushed After Last Documention Update Period Has Passed (Currently 5PM EST April 2nd) Will Not Be Shown Till The Next Update 
 
-## Contributors
+# Contributors
 - **Zainab** - Frontend Development
 - **Steven** - State Management & Component Logic
 - **Ben** - Styling & UI/UX Design
