@@ -1,7 +1,8 @@
-const SignIn = () => {
-    return (
-        <div>Implement Me</div>
-    )
-}
+import { useState } from "react";
+import styles from "./signin.module.css";
 
-export default SignIn;
+const SignUp = () => {
+    return <div>Implement Me</div>;
+};
+
+export default SignUp;
