@@ -35,7 +35,7 @@ Lucky Dish provides customers a seamless and visually pleasing experience in vie
 
 ## Testing Report
 
-### Base Layout Created 3/31/25
+### Base Layout Created 3/31/25 (no big updates occurded before this date worth documenting)
 
 # April 2nd
 
