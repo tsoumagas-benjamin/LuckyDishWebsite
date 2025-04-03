@@ -1,15 +1,18 @@
-import { useState, useRef, useEffect } from 'react';
-import styles from './searchbar.module.css';
+import { useState, useRef, useEffect } from "react";
+import styles from "./searchbar.module.css";
 
 const SearchBar = ({ onRecipesFetched }) => {
-  const [query, setQuery] = useState('');
-  const [suggestions, setSuggestions] = useState([]);   //suggestions from API
-  const containerRef = useRef(null);    //detects click outside search bar
+  const [query, setQuery] = useState("");
+  const [suggestions, setSuggestions] = useState([]); //suggestions from API
+  const containerRef = useRef(null); //detects click outside search bar
 
-    //hide dropdown when you click somewhere else on page
+  //hide dropdown when you click somewhere else on page
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (containerRef.current && !containerRef.current.contains(event.target)) {
+      if (
+        containerRef.current &&
+        !containerRef.current.contains(event.target)
+      ) {
         setSuggestions([]);
       }
     };
@@ -37,13 +40,17 @@ const SearchBar = ({ onRecipesFetched }) => {
       const data = await res.json();
 
       if (data.hits && Array.isArray(data.hits)) {
-        setSuggestions(data.hits.map(hit => hit.recipe.title || hit.recipe.label || "Untitled"));
+        setSuggestions(
+          data.hits.map(
+            (hit) => hit.recipe.title || hit.recipe.label || "Untitled"
+          )
+        );
       } else {
-        console.warn('Unexpected data format:', data);
+        console.warn("Unexpected data format:", data);
         setSuggestions([]);
       }
     } catch (err) {
-      console.error('Error fetching suggestions:', err);
+      console.error("Error fetching suggestions:", err);
       setSuggestions([]);
     }
   };
@@ -57,11 +64,12 @@ const SearchBar = ({ onRecipesFetched }) => {
     try {
       const res = await fetch(`/api/recipes?query=${suggestion}`);
       const data = await res.json();
-      if (onRecipesFetched) {   //sends recipe data back to menu page
+      if (onRecipesFetched) {
+        //sends recipe data back to menu page
         onRecipesFetched(data.hits || []);
       }
     } catch (err) {
-      console.error('Error fetching full recipes:', err);
+      console.error("Error fetching full recipes:", err);
     }
   };
 

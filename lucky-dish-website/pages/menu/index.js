@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Head from "next/head";
 import PageHeader from "../../components/pageheader.js";
 import MenuBar from "../../components/menubar.js";
@@ -9,11 +9,35 @@ import NavBar from "../../components/navbar.js";
 //state to store recipes selected from suggestions
 const Menu = () => {
   const [selectedRecipe, setSelectedRecipe] = useState(null);
+  const [menuItems, setMenuItems] = useState([]);
+  const [filteredItems, setFilteredItems] = useState([]);
+
+  useEffect(() => {
+    const fetchMenuItem = async () => {
+      const res = await fetch("/api/recipes");
+      const data = await res.json();
+      setMenuItems(data);
+      setFilteredItems(data);
+    };
+
+    fetchMenuItem();
+  }, []);
 
   //callback function passed to searchbar, gets called when recipe is selected
   const handleRecipesFetched = (results) => {
     if (results.length > 0) {
       setSelectedRecipe(results[0].recipe); //shows first result
+    }
+  };
+
+  const handleSearch = (query) => {
+    if (query.trim() === "") {
+      setFilteredItems(menuItems);
+    } else {
+      const filtered = menuItems.filter((item) =>
+        item.name.toLowercase().includes(query.toLowercase())
+      );
+      setFilteredItems(filtered);
     }
   };
 
@@ -25,8 +49,11 @@ const Menu = () => {
       </Head>
       <PageHeader />
       <MenuBar />
-      <SearchBar onRecipesFetched={handleRecipesFetched} />
-      <ScrollMenu />
+      <SearchBar
+        onSearch={handleSearch}
+        onRecipesFetched={handleRecipesFetched}
+      />
+      <ScrollMenu menuItems={filteredItems} />
       <NavBar />
 
       {/* Render selected recipe here */}
@@ -38,7 +65,11 @@ const Menu = () => {
               <img
                 src={selectedRecipe.image}
                 alt={selectedRecipe.title}
-                style={{ width: "200px", borderRadius: "8px", marginTop: "10px" }}
+                style={{
+                  width: "200px",
+                  borderRadius: "8px",
+                  marginTop: "10px",
+                }}
               />
             )}
           </div>
