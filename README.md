@@ -84,7 +84,7 @@ Lucky Dish provides customers a seamless and visually pleasing experience in vie
 - Implement API calls for nutrition analysis 
 - Use bold text for navigation and menu category buttons for better readability on small screens
 
-## IMMEDIATE ATTENTION - NEEDED FIXES
+## NEEDED FIXES
 - Display menu items in at least a category (Breakfast, Lunch, etc.)
 - Search Bar Needs Usabilty (NEEDS MENU ITEMS TO FUNCTION)
 - Text Displayed Twice unintentionally (As Seen In Image Below)
