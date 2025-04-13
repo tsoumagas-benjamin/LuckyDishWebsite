@@ -1,6 +1,6 @@
 import { useState } from "react";
 import MenuItem from "./MenuItem.js";
-import styles from "./scrollmenu.module.css";
+import styles from "./ScrollMenu.module.css";
 
 const ScrollMenu = () => {
   return (

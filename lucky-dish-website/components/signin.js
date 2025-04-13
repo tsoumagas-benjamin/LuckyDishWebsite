@@ -4,7 +4,7 @@ import styles from "./signin.module.css"; // Import the CSS module
 
 const SignIn = () => {
     return (
-        <div>
+        <div className={styles.container}>
             <h2 className={styles.heading}>Sign In</h2>
             <SignInForm />
         </div>

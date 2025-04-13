@@ -1,4 +1,4 @@
-/* CSS Module for NavBar */
+/* CSS Module for ScrollMenu */
 
 /* Styling for div */
 .div {
@@ -8,4 +8,6 @@
     align-items: center;
     background-color: rgb(122, 122, 122);
     border-radius: 4px;
+    padding: 10px 0;
+    margin: 0 5% 10px;
 }
