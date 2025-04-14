@@ -1,30 +1,40 @@
 import { useState } from "react";
 import styles from "./MenuItem.module.css";
-import Link from "next/link";
 
-const MenuItem = ({ item }) => {
+const MenuItem = ({ item, recipe }) => {
   const [isFavorited, setIsFavorited] = useState(false);
 
   const toggleFavorite = () => {
     setIsFavorited(!isFavorited);
   };
-  // Link to Link module attempt to route from menu id to menuitem for searchbar (potential fix for API)
-  return (
-    <div>
-      <Link href={`/menu/${item.id}`}>
-        <a>
-          <img src={item.image} alt={item.title} />
-          <h3>{item.title}</h3>
-        </a>
-      </Link>
 
-      <img />
-      <span className={styles.name}>Dish Name</span>
-      <span className={styles.price}>Dish Price</span>
-      <p className={styles.tags}>Dietary Tags Here</p>
-      <button onclick={toggleFavorite}>
-        {isFavorited ? "Unfavorite" : "Favorite"}
-      </button>
+  const data = recipe || item;
+
+  if (!data) return null;
+
+  return (
+    <div className={styles.card}>
+      {data.image && (
+        <img className={styles.image} src={data.image} alt={data.title} />
+      )}
+      <div className={styles.details}>
+        <h2 className={styles.title}>{data.title}</h2>
+
+        {/*display summary from spoonacular */}
+        {data.summary && (
+          <div
+            className={styles.summary}
+            dangerouslySetInnerHTML={{ __html: data.summary }}
+          />
+        )}
+
+        <p className={styles.tags}>Dietary Tags Here</p>
+        <p className={styles.price}>Dish Price</p>
+
+        <button onClick={toggleFavorite} className={styles.favoriteBtn}>
+          {isFavorited ? "Unfavorite" : "Favorite"}
+        </button>
+      </div>
     </div>
   );
 };

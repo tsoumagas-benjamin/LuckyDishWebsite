@@ -5,12 +5,13 @@ import MenuBar from "../../components/menubar.js";
 import SearchBar from "../../components/searchbar.js";
 import ScrollMenu from "../../components/scrollmenu.js";
 import NavBar from "../../components/navbar.js";
+import MenuItem from "../../components/MenuItem.js";
 
-//state to store recipes selected from suggestions
+//main menu component
 const Menu = () => {
-  const [selectedRecipe, setSelectedRecipe] = useState(null);
-  const [menuItems, setMenuItems] = useState([]);
-  const [filteredItems, setFilteredItems] = useState([]);
+  const [selectedRecipe, setSelectedRecipe] = useState(null); //stores the clicked recipe from search
+  const [menuItems, setMenuItems] = useState([]);             //stores all menu items
+  const [filteredItems, setFilteredItems] = useState([]);     //stores filtered items for ScrollMenu
 
   useEffect(() => {
     const fetchMenuItem = async () => {
@@ -23,13 +24,14 @@ const Menu = () => {
     fetchMenuItem();
   }, []);
 
-  //callback function passed to searchbar, gets called when recipe is selected
+  //this function gets triggered when a recipe is selected in the SearchBar
   const handleRecipesFetched = (results) => {
     if (results.length > 0) {
-      setSelectedRecipe(results[0].recipe); //shows first result
+      setSelectedRecipe(results[0].recipe); //use the first result as selected
     }
   };
 
+  //this filters menu items in ScrollMenu based on search input
   const handleSearch = (query) => {
     if (query.trim() === "") {
       setFilteredItems(menuItems);
@@ -56,30 +58,8 @@ const Menu = () => {
       <ScrollMenu menuItems={filteredItems} />
       <NavBar />
 
-      {/* Render selected recipe here */}
-      <div style={{ padding: "1rem", textAlign: "center" }}>
-        {selectedRecipe ? (
-          <div>
-            <h2>{selectedRecipe.title}</h2>
-            {selectedRecipe.image && (
-              <img
-                src={selectedRecipe.image}
-                alt={selectedRecipe.title}
-                style={{
-                  width: "200px",
-                  borderRadius: "8px",
-                  marginTop: "10px",
-                }}
-              />
-            )}
-          </div>
-        ) : (
-          <div>
-            <h3>Dish Name and Price Here</h3>
-            <p>Dietary Tags Here</p>
-          </div>
-        )}
-      </div>
+      {/* instead of rendering recipe here, pass it to MenuItem */}
+      <MenuItem recipe={selectedRecipe} />
     </>
   );
 };
