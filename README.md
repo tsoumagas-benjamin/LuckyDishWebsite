@@ -91,7 +91,41 @@ Lucky Dish provides customers a seamless and visually pleasing experience in vie
 
 ![image](https://github.com/user-attachments/assets/fd8b1ffb-c7a6-4eaa-81d1-ec55c2bc4832)
 
-## Any Further Changes Pushed After Last Documention Update Period Has Passed (Currently 5PM EST April 2nd) Will Not Be Shown Till The Next Update 
+## Note:
+No work was committed thus no work could be reviewed or documented between April 3rd to April 11th, 2025. 
+All updates and documentation changes resume on April 12th, 2025.
+
+# April 12th
+
+### New Updates
+Updated styling for
+- MenuItem component
+- ScrollMenu component
+- SignIn component
+
+# April 14th
+
+## As of April 14th, 2025 (3:30PM)
+
+### New Updates
+MenuItem Component
+- Added item prop to support improved data flow
+- This may help the search bar and API usage
+
+Homepage
+- Added a new homepage component
+- Navigation bar updated to include homepage
+
+ScrollMenu Changes
+- Adjusted for potential fixes in API usage
+- Routing with [id].js
+- Created a dynamic route for menu items
+May help in passing and routing menu data with API
+
+Menu Index Fix
+- Fixed an error found in the menu/index.js file
+
+## Any Further Changes Pushed After Last Documention Update Period Has Passed (Currently April 14th, 2025 3:30PM EST) Will Not Be Shown Till The Next Update 
 
 # Contributors
 - **Zainab** - Frontend Development
