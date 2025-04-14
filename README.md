@@ -198,7 +198,7 @@ Suggested Fixes
 - Search Bar Needs Usabilty (NEEDS MENU ITEMS TO FUNCTION)
 - Text Displayed Twice unintentionally (As Seen In Image Below)
 
-![image](https://github.com/user-attachments/assets/fd8b1ffb-c7a6-4eaa-81d1-ec55c2bc4832)
+![Text Displayed Twice](https://i.imgur.com/xtAoQ5o.png)
 
 ### Note:
 No work was committed between April 3rd to April 11th thus no work could be reviewed or documented during that time.
