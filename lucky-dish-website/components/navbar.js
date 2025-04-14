@@ -12,6 +12,11 @@ const NavBar = () => {
   return (
     <nav className={styles.nav}>
       <div className={styles.div}>
+        <Link href="/home" className={styles.link}>
+          Homepage
+        </Link>
+      </div>
+      <div className={styles.div}>
         <Link href="/about" className={styles.link}>
           About Us
         </Link>

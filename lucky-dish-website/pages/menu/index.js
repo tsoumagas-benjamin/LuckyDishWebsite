@@ -35,7 +35,7 @@ const Menu = () => {
       setFilteredItems(menuItems);
     } else {
       const filtered = menuItems.filter((item) =>
-        item.name.toLowercase().includes(query.toLowercase())
+        item.name.toLowerCase().includes(query.toLowerCase())
       );
       setFilteredItems(filtered);
     }
