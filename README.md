@@ -85,13 +85,16 @@ These run on the server inside `pages/api/`.
 The `MenuItem` component represents an individual dish in the menu. The key features added in **Phase 2**:
 - Added an `item` prop that passes data for each menu item, including `id`, `image`, `title`, etc.
 - Implemented a "favorite" feature that allows users to toggle their favorite dishes.
-- Introduced dynamic routing with `Link` to allow navigation to detailed dish pages (`/menu/[id]`), which is useful for the use of Spoonacular API for displaying nutritional information.
+- Introduced dynamic routing with `Link` to allow navigation to detailed dish pages (`/menu/[id]`), which is useful for the use of Spoonacular API for displaying nutritional information. Like This:
+![Lucky Dish Image](https://i.imgur.com/IRGPbLA.png)
 
 ### **NavBar.js**
 The `NavBar` component handles the navigation across the website. Updates made in **Phase 2**:
 - Links for **Homepage**, **About Us**, **Menu**, and **Login** have been added to the navigation bar.
 - Mobile-friendly navigation: implemented state handling to toggle the mobile menu visibility.
 - Ensured the styling was consistent with the overall design of the site.
+![Image Description](https://i.imgur.com/xyz123.png)
+
 
 ### **ScrollMenu.js**
 The `ScrollMenu` component renders a list of `MenuItem` components dynamically based on the menu items passed to it. Key updates in **Phase 2**:
@@ -109,12 +112,16 @@ The `SignIn` component handles user login functionality. Key features added in *
 - Uses the custom `SignInForm` component to manage user input and submission.
 - Applies modular CSS for consistent styling across the login interface.
 - Includes a heading element to clearly indicate the purpose of the page to users.
+![Image Description](https://i.imgur.com/xyz123.png)
+
 
 ### **MenuBar.js**
 The `MenuBar` component displays category filter buttons for users to switch between different food types. Key features added in **Phase 2**:
 - Introduced local state `activeCategory` to manage the currently selected category.
 - Provides buttons for "Breakfast," "Lunch," "Dinner," "Dessert," and "Drinks."
 - Category selection is currently local; can be expanded to filter menu items dynamically in future phases.
+![Image Description](https://i.imgur.com/hhs0nZa.png)
+
 
 ### **PageHeader.js**
 The `PageHeader` component is a static header displayed at the top of the application. Key features added in **Phase 2**:
