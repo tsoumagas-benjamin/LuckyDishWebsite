@@ -86,14 +86,14 @@ The `MenuItem` component represents an individual dish in the menu. The key feat
 - Added an `item` prop that passes data for each menu item, including `id`, `image`, `title`, etc.
 - Implemented a "favorite" feature that allows users to toggle their favorite dishes.
 - Introduced dynamic routing with `Link` to allow navigation to detailed dish pages (`/menu/[id]`), which is useful for the use of Spoonacular API for displaying nutritional information. Like This:
-![Lucky Dish Image](https://i.imgur.com/IRGPbLA.png)
+![MenuItem](https://i.imgur.com/umPCcql.png)
 
 ### **NavBar.js**
 The `NavBar` component handles the navigation across the website. Updates made in **Phase 2**:
 - Links for **Homepage**, **About Us**, **Menu**, and **Login** have been added to the navigation bar.
 - Mobile-friendly navigation: implemented state handling to toggle the mobile menu visibility.
 - Ensured the styling was consistent with the overall design of the site.
-![Image Description](https://i.imgur.com/xyz123.png)
+![NavBar](https://i.imgur.com/FpeMqME.png)
 
 
 ### **ScrollMenu.js**
@@ -112,7 +112,7 @@ The `SignIn` component handles user login functionality. Key features added in *
 - Uses the custom `SignInForm` component to manage user input and submission.
 - Applies modular CSS for consistent styling across the login interface.
 - Includes a heading element to clearly indicate the purpose of the page to users.
-![Image Description](https://i.imgur.com/xyz123.png)
+![Sign In and Up](https://i.imgur.com/6MMO1tB.png)
 
 
 ### **MenuBar.js**
@@ -120,7 +120,7 @@ The `MenuBar` component displays category filter buttons for users to switch bet
 - Introduced local state `activeCategory` to manage the currently selected category.
 - Provides buttons for "Breakfast," "Lunch," "Dinner," "Dessert," and "Drinks."
 - Category selection is currently local; can be expanded to filter menu items dynamically in future phases.
-![Image Description](https://i.imgur.com/hhs0nZa.png)
+![MenuBar](https://i.imgur.com/04Kqhhl.png)
 
 
 ### **PageHeader.js**
