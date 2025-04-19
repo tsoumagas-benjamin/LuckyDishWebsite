@@ -3,6 +3,7 @@ import SignUp from "../../components/signup.js";
 import SignIn from "../../components/signin.js";
 import NavBar from "../../components/navbar.js";
 import Head from "next/head";
+import Footer from "@/components/footer.js";
 
 const Login = () => {
     return (
@@ -14,9 +15,10 @@ const Login = () => {
             <PageHeader />
 
             <SignUp />
-
             <SignIn />
             <NavBar />
+            <br></br>
+            <Footer />
         </>
     );
 };

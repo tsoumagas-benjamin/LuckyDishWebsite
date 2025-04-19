@@ -1,0 +1,24 @@
+.footer {
+    background: #827d77;
+    padding: 2.5rem 1rem;
+    text-align: center;
+}
+
+.name {
+    font-family: "Georgia";
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.slogan {
+    font-size: 1rem;
+    color: #ffffff;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: #fefefe;
+}

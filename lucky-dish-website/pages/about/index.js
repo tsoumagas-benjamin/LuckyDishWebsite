@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import PageHeader from "../../components/pageheader.js";
 import NavBar from "../../components/navbar.js";
 import Head from "next/head";
+import Footer from "@/components/footer.js";
 
 const About = () => {
     const contentStyle = {
@@ -30,7 +31,7 @@ const About = () => {
                     space where everyone feels at home — one lucky bite at a
                     time.
                 </p>
-
+                <br></br>
                 <h3>Our History:</h3>
                 <p>
                     At Lucky Dish, our journey began with a simple dream — to
@@ -44,11 +45,15 @@ const About = () => {
                     our story is one of passion, heart, and a deep love for
                     sharing good food with good people.
                 </p>
+                <br></br>
 
+                <h3>Contact Us:</h3>
                 <h4>Phone: 1-849-573-8376</h4>
                 <h5>Business Email: inquiries@luckydish.com</h5>
             </div>
             <NavBar />
+            <br></br>
+            <Footer />
         </>
     );
 };

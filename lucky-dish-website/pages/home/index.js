@@ -2,6 +2,7 @@ import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import NavBar from "@/components/navbar.js";
 import PageHeader from "../../components/pageheader.js";
+import Footer from "@/components/footer.js";
 
 export default function Home() {
     return (
@@ -21,10 +22,14 @@ export default function Home() {
             </nav>
             <NavBar />
             <p style={{ textAlign: "center" }}>
-                Your go-to spot for comforting, flavorful meals made with love.
+                Your go-to spot for comforting, flavorful meals made with love.{" "}
+                <br></br>
                 At Lucky Dish, we serve up delicious dishes inspired by
                 tradition and crafted for today’s taste.
             </p>
+
+            <br></br>
+            <Footer />
         </>
     );
 }
