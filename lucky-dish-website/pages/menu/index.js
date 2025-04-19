@@ -61,6 +61,7 @@ const Menu = () => {
 
             {/* instead of rendering recipe here, pass it to MenuItem */}
             <MenuItem recipe={selectedRecipe} />
+            {/* <MenuItem item={"Cake"} recipe={"Add Eggs"} dietaryTags={"Vegan"} price={19.99}/> */}
             <br></br>
             <Footer />
         </>

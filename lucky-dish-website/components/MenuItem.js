@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./MenuItem.module.css";
 
-const MenuItem = ({ item, recipe }) => {
+const MenuItem = ({ item, recipe, dietaryTags, price}) => {
   const [isFavorited, setIsFavorited] = useState(false);
 
   const toggleFavorite = () => {
@@ -28,8 +28,8 @@ const MenuItem = ({ item, recipe }) => {
           />
         )}
 
-        <p className={styles.tags}>Dietary Tags Here</p>
-        <p className={styles.price}>Dish Price</p>
+        <p className={styles.tags}>{dietaryTags}</p>
+        <p className={styles.price}>{price}</p>
 
         <button onClick={toggleFavorite} className={styles.favoriteBtn}>
           {isFavorited ? "Unfavorite" : "Favorite"}
