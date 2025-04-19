@@ -5,6 +5,15 @@ import PageHeader from "../../components/PageHeader.js";
 import Footer from "@/components/Footer.js";
 
 export default function Home() {
+    const contentStyle = {
+        margin: "20px 15%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: "10px"
+    };
+
     return (
         <>
             <PageHeader />
@@ -21,12 +30,15 @@ export default function Home() {
                 <Link href="pages/login"></Link>
             </nav>
             <NavBar />
-            <p style={{ textAlign: "center" }}>
-                Your go-to spot for comforting, flavorful meals made with love.{" "}
-                <br></br>
-                At Lucky Dish, we serve up delicious dishes inspired by
-                tradition and crafted for today’s taste.
-            </p>
+            <div style={contentStyle}>
+                <p style={{ textAlign: "center" }}>
+                    Your go-to spot for comforting, flavorful meals made with love.{" "}
+                    <br></br>
+                    <br></br>
+                    At Lucky Dish, we serve up delicious dishes inspired by
+                    tradition and crafted for today’s taste.
+                </p>
+            </div>
 
             <br></br>
             <Footer />

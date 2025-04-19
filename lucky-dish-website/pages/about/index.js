@@ -6,11 +6,12 @@ import Footer from "@/components/Footer.js";
 
 const About = () => {
     const contentStyle = {
-        margin: "20px 0px",
+        margin: "20px 15%",
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        gap: "10px"
     };
 
     return (
