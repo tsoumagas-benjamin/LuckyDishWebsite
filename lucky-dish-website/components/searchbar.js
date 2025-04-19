@@ -2,11 +2,11 @@ import { useState, useRef, useEffect } from "react";
 import styles from "./searchbar.module.css";
 
 const SearchBar = ({ onRecipesFetched }) => {
-  const [query, setQuery] = useState("");
-  const [suggestions, setSuggestions] = useState([]); //suggestions from API
-  const containerRef = useRef(null); //detects click outside search bar
+  const [query, setQuery] = useState(""); //user's input
+  const [suggestions, setSuggestions] = useState([]); //list of titles
+  const containerRef = useRef(null); //detect outside click
 
-  //hide dropdown when you click somewhere else on page
+  //close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -23,53 +23,50 @@ const SearchBar = ({ onRecipesFetched }) => {
     };
   }, []);
 
-  //fetch and display suggestions in dropdown as you type
+  //fetch recipe titles as user types
   const handleInputChange = async (e) => {
     const value = e.target.value;
     setQuery(value);
-
-    //dont search unless theres more than 3 characters
+    //dont show suggestions if input is too short
     if (value.length < 3) {
       setSuggestions([]);
       return;
     }
-
-    //calls API route to fetch recipe suggestions
+    //make API request to get title suggestions
     try {
-      const res = await fetch(`/api/recipes?query=${value}`);
+      const res = await fetch(
+        `/api/recipes?query=${value}&mode=suggest`,
+        { cache: "no-store" } //prevent caching
+      );
       const data = await res.json();
+      console.log("API Suggest Response:", data); //debug
 
-      if (data.hits && Array.isArray(data.hits)) {
-        setSuggestions(
-          data.hits.map(
-            (hit) => hit.recipe.title || hit.recipe.label || "Untitled"
-          )
-        );
+      //if there are valid suggestions then updates the state
+      if (data.suggestions && Array.isArray(data.suggestions)) {
+        setSuggestions(data.suggestions);
       } else {
-        console.warn("Unexpected data format:", data);
         setSuggestions([]);
       }
     } catch (err) {
-      console.error("Error fetching suggestions:", err);
+      console.error("Error fetching suggestions:", err);  //error handling
       setSuggestions([]);
     }
   };
 
-  //this runs when user clicks on a suggestion
+  //fetch full recipe data when a suggestion is clicked
   const handleSuggestionClick = async (suggestion) => {
     setQuery(suggestion);
     setSuggestions([]);
 
-    //gets full recipe data from the backend
     try {
       const res = await fetch(`/api/recipes?query=${suggestion}`);
       const data = await res.json();
+
       if (onRecipesFetched) {
-        //sends recipe data back to menu page
         onRecipesFetched(data.hits || []);
       }
     } catch (err) {
-      console.error("Error fetching full recipes:", err);
+      console.error("Error fetching full recipe:", err);
     }
   };
 
@@ -80,8 +77,9 @@ const SearchBar = ({ onRecipesFetched }) => {
         className={styles.input}
         placeholder="Search..."
         value={query}
-        onChange={handleInputChange}
+        onChange={handleInputChange} //fetches suggestions while typing
       />
+
       {suggestions.length > 0 && (
         <ul className={styles.dropdown}>
           {suggestions.map((suggestion, index) => (
