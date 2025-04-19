@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import Head from "next/head";
-import PageHeader from "../../components/pageheader.js";
-import MenuBar from "../../components/menubar.js";
-import SearchBar from "../../components/searchbar.js";
-import ScrollMenu from "../../components/scrollmenu.js";
-import NavBar from "../../components/navbar.js";
+import PageHeader from "../../components/PageHeader.js";
+import MenuBar from "../../components/MenuBar.js";
+import SearchBar from "../../components/SearchBar.js";
+import ScrollMenu from "../../components/ScrollMenu.js";
+import NavBar from "../../components/NavBar.js";
 import MenuItem from "../../components/MenuItem.js";
-import Footer from "@/components/footer.js";
+import Footer from "@/components/Footer.js";
 
 //main menu component
 const Menu = () => {

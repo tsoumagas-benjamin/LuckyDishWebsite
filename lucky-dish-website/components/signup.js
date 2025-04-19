@@ -1,5 +1,5 @@
 import Head from "next/head";
-import SignUpForm from "../components/signupform";
+import SignUpForm from "./signupform";
 import styles from "./signup.module.css"; // Import the CSS module
 
 const SignUp = () => {

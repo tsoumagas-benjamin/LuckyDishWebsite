@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import PageHeader from "../../components/pageheader.js";
-import NavBar from "../../components/navbar.js";
+import PageHeader from "../../components/PageHeader.js";
+import NavBar from "../../components/NavBar.js";
 import Head from "next/head";
-import Footer from "@/components/footer.js";
+import Footer from "@/components/Footer.js";
 
 const About = () => {
     const contentStyle = {

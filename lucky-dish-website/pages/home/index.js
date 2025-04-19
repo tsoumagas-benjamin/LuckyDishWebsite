@@ -1,8 +1,8 @@
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
-import NavBar from "@/components/navbar.js";
-import PageHeader from "../../components/pageheader.js";
-import Footer from "@/components/footer.js";
+import NavBar from "@/components/NavBar.js";
+import PageHeader from "../../components/PageHeader.js";
+import Footer from "@/components/Footer.js";
 
 export default function Home() {
     return (
