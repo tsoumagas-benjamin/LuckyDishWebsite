@@ -21,18 +21,27 @@ const RecipeDetail = () => {
   if (!recipe) return <p>Loading...</p>;
 
   return (
-    <div className={styles.container}>
-      <h2>{recipe.title}</h2>
-      <img className={styles.image} src={recipe.image} alt={recipe.title} />
-      <p>{recipe.summary}</p>
+    <div className={styles.page}>
+      <div className={styles.details}>
+        <h1 className={styles.title}>{recipe.title}</h1>
+        {recipe.image && (
+          <img className={styles.image} src={recipe.image} alt={recipe.title} />
+        )}
 
-      {/* Back to Homepage Button */}
-      <button
-        className={styles.button}
-        onClick={() => router.push("/")} // Navigate back to homepage
-      >
-        Back to Homepage
-      </button>
+        {/* Recipe Summary */}
+        <div
+          className={styles.summary}
+          dangerouslySetInnerHTML={{ __html: recipe.summary }}
+        ></div>
+
+        {/* Back to Homepage Button */}
+        <button
+          className={styles.button}
+          onClick={() => router.push("/")} // Navigate back to homepage
+        >
+          Back to Homepage
+        </button>
+      </div>
     </div>
   );
 };

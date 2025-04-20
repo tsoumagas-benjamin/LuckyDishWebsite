@@ -28,43 +28,44 @@ const MenuItem = ({ item, recipe }) => {
     : "Price not available";
 
   return (
-    <Link href={`/menu/${data.id}`} className={styles.linkWrapper}>
-      <div className={styles.card}>
-        {data.image && (
+    <div className={styles.card}>
+      {data.image && (
+        <Link href={`/menu/${data.id}`}>
           <img className={styles.image} src={data.image} alt={data.title} />
-        )}
-        <div className={styles.details}>
-          <h2 className={styles.title}>{data.title}</h2>
+        </Link>
+      )}
 
-          {/* Summary or fallback */}
-          {data.summary ? (
-            <div
-              className={styles.summary}
-              dangerouslySetInnerHTML={{ __html: data.summary }}
-            />
-          ) : (
-            <p className={styles.summary}>
-              No description available for this recipe.
-            </p>
-          )}
+      <div className={styles.details}>
+        <h2 className={styles.title}>{data.title}</h2>
 
-          {/* Dietary tags */}
-          <p className={styles.tags}>
-            {dietaryTags.length > 0
-              ? dietaryTags.join(", ")
-              : "No dietary tags available"}
+        {/* Summary or fallback */}
+        {data.summary ? (
+          <div
+            className={styles.summary}
+            dangerouslySetInnerHTML={{ __html: data.summary }}
+          />
+        ) : (
+          <p className={styles.summary}>
+            No description available for this recipe.
           </p>
+        )}
 
-          {/* Price */}
-          <p className={styles.price}>{price}</p>
+        {/* Dietary tags */}
+        <p className={styles.tags}>
+          {dietaryTags.length > 0
+            ? dietaryTags.join(", ")
+            : "No dietary tags available"}
+        </p>
 
-          {/* Favorite button */}
-          <button onClick={toggleFavorite} className={styles.favoriteBtn}>
-            {isFavorited ? "Unfavorite" : "Favorite"}
-          </button>
-        </div>
+        {/* Price */}
+        <p className={styles.price}>{price}</p>
+
+        {/* Favorite button */}
+        <button onClick={toggleFavorite} className={styles.favoriteBtn}>
+          {isFavorited ? "Unfavorite" : "Favorite"}
+        </button>
       </div>
-    </Link>
+    </div>
   );
 };
 
