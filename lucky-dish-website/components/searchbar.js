@@ -36,6 +36,11 @@ const SearchBar = ({ onRecipesFetched }) => {
 
     // Debounced fetch after 750 ms of no typing
     debounceTimeout.current = setTimeout(async () => {
+      //dont show suggestions if input is too short
+      if (!value || value.length < 3) {
+        setSuggestions([]);
+        return;
+      }
       try {
         const res = await fetch(`/api/recipes?query=${value}&mode=suggest`, {
           cache: "no-store",
@@ -52,12 +57,6 @@ const SearchBar = ({ onRecipesFetched }) => {
       }
     }, 750); // Delay in ms
   };
-
-  //dont show suggestions if input is too short
-  if (value.length < 3) {
-    setSuggestions([]);
-    return;
-  }
 
   //fetch full recipe data when a suggestion is clicked
   const handleSuggestionClick = async (suggestion) => {
