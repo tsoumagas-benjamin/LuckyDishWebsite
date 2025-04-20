@@ -236,9 +236,65 @@ Menu Index Fix
 
 **All Functional**
 
+April 18th
 
-### Any Further Changes Pushed After Last Documention Update Period Has Passed (Currently April 14th, 2025) Will Not Be Shown Till The Next Update 
+#### New Updates
+Footer Component
+- A new Footer component was created
+- Added across all main pages for consistent site layout
+- Includes links to "About Us," "Menu," and "Login" that stay locked to the bottom of the screen
+- Improved overall UI/UX by making navigation more intuitive for users on both desktop and mobile
 
+**All Functional**
+
+## April 19th
+
+#### New Updates
+MenuItem Component
+- Added price and dietaryTags as props for each dish.
+- Example usage shown in menu/index.js for testing purposes
+- Tags now include labels such as Vegan, Vegetarian, and Nut-Free to match restaurant goals
+
+Recipe Suggestions
+- API fetches are now limited to user interactions (like clicking on a suggestion)
+- Helps reduce unnecessary calls due to the Free API Daily Limit
+
+Styling & Text Improvements
+- Homepage and About page text layout improved
+- Mobile responsiveness enhanced to reduce clutter and improve readability
+
+Sign-Up Form (WIP)
+- Validation improvements are underway to ensure fields are correctly completed before submission (still being worked on)
+
+**All Currently Functional (except WIP validation)**
+
+## April 20th
+
+#### New Updates
+SearchBar Component
+- Fixed a value error in the menu search bar
+- Implemented lazy loading for API fetches to reduce request overload and handle API daily limit better
+
+MenuItem Component
+- Updated Link behavior: now only the image triggers routing to the /menu/[id] page instead of the entire card
+
+Routing and Data Handling
+- Menu/index.js now correctly pulls data.hits for consistent API data structure
+- ScrollMenu.js updated to pass item prop correctly into MenuItem
+
+Homepage Routing
+- index.js now redirects to /home properly
+
+Code Clean-up
+- Removed redundant and duplicated code for better clarity and maintainability
+
+Forms
+- Added success alerts for better user feedback after form submissions
+- Further refined form validation rules
+
+**All Functional**
+
+### Any Further Changes Pushed After Last Documention Update Period Has Passed (Currently April 20th, 2025) Will Not Be Shown Till The Next Update 
 
 
 # Contributors
