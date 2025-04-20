@@ -5,6 +5,7 @@ const SearchBar = ({ onRecipesFetched }) => {
   const [query, setQuery] = useState(""); //user's input
   const [suggestions, setSuggestions] = useState([]); //list of titles
   const containerRef = useRef(null); //detect outside click
+  const debounceTimeout = useRef(null); // API limitation lazy load
 
   //close dropdown when clicking outside
   useEffect(() => {
@@ -24,34 +25,39 @@ const SearchBar = ({ onRecipesFetched }) => {
   }, []);
 
   //fetch recipe titles as user types
-  const handleInputChange = async (e) => {
+  const handleInputChange = (e) => {
     const value = e.target.value;
     setQuery(value);
-    //dont show suggestions if input is too short
-    if (value.length < 3) {
-      setSuggestions([]);
-      return;
-    }
-    //make API request to get title suggestions
-    try {
-      const res = await fetch(
-        `/api/recipes?query=${value}&mode=suggest`,
-        { cache: "no-store" } //prevent caching
-      );
-      const data = await res.json();
-      console.log("API Suggest Response:", data); //debug
 
-      //if there are valid suggestions then updates the state
-      if (data.suggestions && Array.isArray(data.suggestions)) {
-        setSuggestions(data.suggestions);
-      } else {
+    // Debounce method calling
+    if (debounceTimeout.current) {
+      clearTimeout(debounceTimeout.current);
+    }
+
+    // Debounced fetch after 750 ms of no typing
+    debounceTimeout.current = setTimeout(async () => {
+      try {
+        const res = await fetch(`/api/recipes?query=${value}&mode=suggest`, {
+          cache: "no-store",
+        });
+        const data = await res.json();
+        if (data.suggestions && Array.isArray(data.suggestions)) {
+          setSuggestions(data.suggestions);
+        } else {
+          setSuggestions([]);
+        }
+      } catch (err) {
+        console.error("Error fetching suggestions:", err);
         setSuggestions([]);
       }
-    } catch (err) {
-      console.error("Error fetching suggestions:", err);  //error handling
-      setSuggestions([]);
-    }
+    }, 750); // Delay in ms
   };
+
+  //dont show suggestions if input is too short
+  if (value.length < 3) {
+    setSuggestions([]);
+    return;
+  }
 
   //fetch full recipe data when a suggestion is clicked
   const handleSuggestionClick = async (suggestion) => {
@@ -92,5 +98,4 @@ const SearchBar = ({ onRecipesFetched }) => {
     </div>
   );
 };
-
 export default SearchBar;
