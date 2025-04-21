@@ -15,7 +15,6 @@ const SignUpForm = () => {
         setError("");
         setEmailError("");
         setPasswordError("");
-        setIsSuccess(false);
 
         // Form validation
         const isValid = validateForm();
