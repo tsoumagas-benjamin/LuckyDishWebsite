@@ -4,7 +4,7 @@
 Lucky Dish provides customers a seamless and visually pleasing experience in viewing the menu and information about the restaurant. Users should be able to search the menu items, from select options (breakfast/lunch/dinner/dessert/etc.) and view menu item costs and nutritional value at a glance. As a health conscious restaurant, dishes should be labeled for common dietary restrictions such as vegan/vegetarian/nut-free. As well the website should facilitate easy ordering and ways to see the total at a glance.
 
 ## Features
-- Search & Filter Menu Items  
+- Search & Browse Menu Items  
 - View Nutritional Information  
 - Place an Order and See Total Cost  
 - Dietary Labels for Vegan, Vegetarian, and Nut-Free Dishes  
