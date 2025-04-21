@@ -233,7 +233,7 @@ Menu Index Fix
 
 **All Functional**
 
-April 18th
+## April 18th
 
 #### New Updates
 Footer Component
