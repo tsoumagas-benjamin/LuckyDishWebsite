@@ -29,9 +29,7 @@ Lucky Dish provides customers a seamless and visually pleasing experience in vie
 5. Open **http://localhost:3000** in your browser
 
 ## API Used
-- [Edamam API](https://developer.edamam.com/) for nutrition analysis
-- [API Ninja](https://api-ninjas.com/) recipe data
-- [Spooncular API](https://spoonacular.com/) for additional recipe data
+- [Spooncular API](https://spoonacular.com/) for nutrition and recipe data
 
 ## 🌐 Routing Overview
 
@@ -79,7 +77,7 @@ These run on the server inside `pages/api/`.
 4. They can learn more or go to `/about` to read about the app.
 
 
-## Component Descriptions
+## Main Component Descriptions
 
 ### **MenuItem.js**
 The `MenuItem` component represents an individual dish in the menu. The key features added in **Phase 2**:
@@ -118,8 +116,8 @@ The `SignIn` component handles user login functionality. Key features added in *
 ### **MenuBar.js**
 The `MenuBar` component displays category filter buttons for users to switch between different food types. Key features added in **Phase 2**:
 - Introduced local state `activeCategory` to manage the currently selected category.
-- Provides buttons for "Breakfast," "Lunch," "Dinner," "Dessert," and "Drinks."
-- Category selection is currently local; can be expanded to filter menu items dynamically in future phases.
+- Provides visual not funcitonal buttons for "Breakfast," "Lunch," "Dinner," "Dessert," and "Drinks."
+- Categorys let the user know what options are on the site that they can search for.
 ![MenuBar](https://i.imgur.com/04Kqhhl.png)
 
 
@@ -295,7 +293,6 @@ Forms
 
 **All Functional**
 
-### Any Further Changes Pushed After Last Documention Update Period Has Passed (Currently April 20th, 2025) Will Not Be Shown Till The Next Update 
 
 
 # Contributors
